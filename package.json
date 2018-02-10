@@ -1,0 +1,31 @@
+{
+  "name": "react-post",
+  "version": "1.0.0",
+  "description": "Links and Iframes using POST requests",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "NODE_ENV=production babel ./src --out-dir ./dist --copy-files --source-maps",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "post",
+    "link",
+    "iframe",
+    "anchor"
+  ],
+  "author": "JD Isaacks",
+  "license": "ISC",
+  "peerDependencies": {
+    "react": "^16.2.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.39",
+    "@babel/core": "7.0.0-beta.39",
+    "@babel/plugin-proposal-class-properties": "^7.0.0-beta.39",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.39",
+    "@babel/preset-env": "^7.0.0-beta.39",
+    "@babel/preset-react": "^7.0.0-beta.39"
+  },
+  "dependencies": {}
+}
