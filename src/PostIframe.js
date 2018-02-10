@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import post from './post'
 
 let i = 0
 
@@ -11,29 +12,8 @@ export default class PostIframe extends Component {
   iframeName = generateIframeName()
 
   componentDidMount() {
-    const form = this.buildForm()
-    document.body.appendChild(form)
-    form.submit()
-    form.remove()
-  }
-
-  buildForm() {
     const { src, params } = this.props
-
-    const form = document.createElement('form')
-    form.setAttribute('method', 'post')
-    form.setAttribute('action', src)
-    form.setAttribute('target', this.iframeName)
-
-    Object.keys(params).forEach(key => {
-      const input = document.createElement('input')
-      input.setAttribute('type', 'hidden')
-      input.setAttribute('name', key)
-      input.setAttribute('value', params[key])
-      form.appendChild(input)
-    })
-
-    return form
+    post({ action: src, target: this.iframeName, params })
   }
 
   render() {
@@ -42,5 +22,4 @@ export default class PostIframe extends Component {
       <iframe {...props} name={this.iframeName} />
     )
   }
-
 }
